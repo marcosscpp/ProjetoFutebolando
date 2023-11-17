@@ -3,3 +3,4 @@ Flask-SQLAlchemy==3.0
 Flask-WTF==0.15.1
 requests==2.26.0
 WTForms==2.3.3
+gunicorn==19.7.1
