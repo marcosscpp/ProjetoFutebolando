@@ -1,0 +1,9 @@
+.decoration {
+  left: -10rem;
+  position: absolute;
+  top: 45rem;
+  border-radius: 10px;
+  transform: rotate(110deg);
+  width: 30rem;
+  z-index: -1;
+}

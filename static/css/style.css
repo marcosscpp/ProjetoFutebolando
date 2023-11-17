@@ -4,6 +4,13 @@
 @import url("footer.css");
 @import url("alerts.css");
 @import url("forms.css");
+@import url("sobre.css");
+@import url("galeria.css");
+@import url("decorations.css");
+@import url("admin.css");
+@import url("perfil.css");
+@import url("map.css");
+@import url("criadores.css");
 
 @font-face {
   font-family: "Jersey M54";
@@ -12,12 +19,31 @@
 
 :root {
   /*Colors*/
+  --bg-color: #f0edf3;
   --menu-text: #ced4e5;
   --hamburguer: black;
   --menu-text-hover: #f8f8f8;
   --menu-btn: #ced4e5;
   --slogan: white;
-  --gradient: linear-gradient(90deg,rgba(255, 0, 0, 0.806),rgba(15, 1, 210, 0.823));
+  --tabela: rgb(86, 5, 140);
+  --hover-admin: rgba(0, 0, 0, 0.5);
+  --footer-color: #d5d4d3;
+  --gradient: linear-gradient(
+    90deg,
+    rgba(255, 0, 0, 0.806),
+    rgba(15, 1, 210, 0.823)
+  );
+  --gradient45: linear-gradient(
+    45deg,
+    rgba(255, 0, 0, 0.806),
+    rgba(15, 1, 210, 0.823)
+  );
+  --gradient-footer: linear-gradient(0deg, #4b0102, #c00b0e);
+  --patrocinadores: #170f0f;
+  /*Tipografia*/
+  --funcional: "Rubik", sans-serif;
+  --texto-longo: "Poppins", sans-serif;
+  --titulo-destacado: "Jersey M54", sans-serif;
   font-size: 66.25%;
 }
 
@@ -100,7 +126,8 @@ a {
 }
 
 body {
-  background-color: #f6f4f8;
+  background-color: var(--bg-color);
+  overflow-x: hidden;
 }
 
 .whatsapp-icon {
@@ -122,4 +149,30 @@ body {
 
 .whatsapp-icon:hover {
   transform: scale(1.2) rotate(5deg);
+}
+
+.title {
+  font-family: var(--titulo-destacado);
+  font-size: 3rem;
+  margin-bottom: 3rem;
+}
+
+@media (max-width: 280px) {
+  .title {
+    width: 80vw;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 10rem;
+  position: relative;
+  padding: 9rem;
+}
+
+@media (max-width: 280px) {
+  .container {
+    padding: 4rem;
+  }
 }

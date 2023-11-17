@@ -4,13 +4,167 @@
 <section class="banner">
   <div class="banner-clip-path">
   </div>
-  <img src="{{ url_for('static', filename='image/jogador2.png') }}" class="banner-img">
+  <img src="{{ url_for('static', filename='image/jogador2.png') }}" class="banner-img" alt="imagem-participante projeto">
   <div class="banner-info">
     <h2 class="slogan" data-type></h2>
-    <a href="#" class="banner-btn" data-anim>Cadastre-se</a>
+    <a href="#form" class="banner-btn" data-anim>Cadastre-se</a>
   </div>
 </section>
+<div class="container">
 
+  <section class="sobre" id="sobre">
+    <div>
+      <h3 class="sobre-title title">Sobre o Projeto</h3>
+      <p class="sobre-desc">Paixão pelo futebol, esperança para jovens. Nosso lema, 'Tirando jovens das ruas', define nossa missão de oferecer oportunidades e um espaço seguro para crianças e jovens em situações desafiadoras. Junte-se a nós nessa jornada de transformação, onde o futebol se torna um instrumento para um futuro melhor.</p>
+    </div>
+    <img src="{{ url_for('static', filename='image/logo-jogador.png') }}" alt="ilustração do projeto" class="sobre-img">
 
+  </section>
+  <section class="galeria" id="galeria">
+    <h3 class="galeria-title title">Galeria</h3>
+    <div class="galeria-images"></div>
+    <i class="fa-solid fa-chevron-down expand-ico" data-expand></i>
+  </section>
 
+  <section class="criadores" id="criadores">
+    <h3 class="title">Criadores do projeto</h3>
+    <div class="criadores-wrapper">
+      <div class="criador">
+        <img src="{{ url_for('static', filename='image/criadores/criador1.jpg') }}" alt="criador">
+        <span>Zetti da Adega</span>
+      </div>
+
+      <div class="criador">
+        <img src="{{ url_for('static', filename='image/criadores/criador2.jpg') }}" alt="criador">
+        <span>Vinícius</span>
+      </div>
+    </div>
+  </section>
+</div>
+
+<section class="map" id="mapa">
+  <h3 class="map-title">Localizado na <span class="destaque">Arena do Santa Rita</span></h3>
+  <div class="map-container">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29259.62103525808!2d-46.96057832890971!3d-23.552181904457854!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cf07670a92bb25%3A0x137013acc09e35fe!2sArena%20Santa%20Rita!5e0!3m2!1spt-BR!2sbr!4v1700099693767!5m2!1spt-BR!2sbr" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <img class="arena" src="{{ url_for('static', filename='image/arena.jpg') }}" alt="arena treinamento">
+  </div>
+</section>
+<section class="formulario-wrapper" id="form">
+  <form action="{{ url_for('cadastrar') }}" class="formulario" enctype="multipart/form-data" method="POST" data-form>
+    <ul class="steps">
+      <div class="progress" data-progress></div>
+      <li class="step check"><i class="fa-solid fa-circle-info"></i>Informações</li>
+      <li class="step"><i class="fa-solid fa-location-dot"></i>Endereço</li>
+      <li class="step"><i class="fa-solid fa-camera-retro"></i>Imagem</li>
+    </ul>
+    <div class="form-group meio">
+      <div class="colspan">
+        <fieldset class="formulario-field">
+          {{ form.nome.label }}
+          {{ form.nome }}
+          <span class="error-message" data-error></span>
+        </fieldset>
+        <fieldset class="formulario-field">
+          {{ form.nome_responsavel.label }}
+          {{ form.nome_responsavel }}
+          <span class="error-message" data-error></span>
+        </fieldset>
+      </div>
+      <div class="colspan">
+        <fieldset class="formulario-field">
+          {{ form.cpf.label }}
+          {{ form.cpf }}
+          <span class="error-message" data-error></span>
+        </fieldset>
+        <fieldset class="formulario-field not-grow">
+          {{ form.data_nascimento.label }}
+          {{ form.data_nascimento }}
+          <span class="error-message" data-error></span>
+        </fieldset>
+      </div>
+      <div class="colspan">
+        <fieldset class="formulario-field">
+          {{ form.telefone.label }}
+          {{ form.telefone }}
+          <span class="error-message" data-error></span>
+        </fieldset>
+        <fieldset class="formulario-field">
+          {{ form.email.label }}
+          {{ form.email }}
+          <span class="error-message" data-error></span>
+        </fieldset>
+      </div>
+      <fieldset class="formulario-field">
+        {{ form.observacoes.label }}
+        {{ form.observacoes }}
+        <span class="error-message" data-error></span>
+      </fieldset>
+      <div class="btn-group">
+        <button class="avancar">avançar</button>
+      </div>
+    </div>
+
+    <div class="form-group fim">
+      <fieldset class="formulario-field">
+        {{ form.cep.label }}
+        {{ form.cep }}
+        <span class="error-message" data-error></span>
+      </fieldset>
+
+      <fieldset class="formulario-field">
+        {{ form.bairro.label }}
+        {{ form.bairro }}
+        <span class="error-message" data-error></span>
+      </fieldset>
+      <fieldset class="formulario-field">
+        {{ form.rua.label }}
+        {{ form.rua }}
+        <span class="error-message" data-error></span>
+      </fieldset>
+      <fieldset class="formulario-field">
+        {{ form.cidade.label }}
+        {{ form.cidade }}
+        <span class="error-message" data-error></span>
+      </fieldset>
+      <div class="colspan">
+        <fieldset class="formulario-field">
+          {{ form.complemento.label }}
+          {{ form.complemento }}
+          <span class="error-message" data-error></span>
+        </fieldset>
+        <fieldset class="formulario-field not-grow">
+          {{ form.numero_endereco.label }}
+          {{ form.numero_endereco }}
+          <span class="error-message" data-error></span>
+        </fieldset>
+      </div>
+      <div class="btn-group">
+        <button class="voltar">voltar</button>
+        <button class="avancar">avançar</button>
+      </div>
+    </div>
+    <div class="form-group fim">
+      <fieldset class="formulario-field">
+        <div>
+          {{ form.permissoes.label }}
+          {{ form.permissoes }}
+        </div>
+        <span class="error-message" data-error></span>
+      </fieldset>
+      <figure class="form-image" data-error>
+        <img class="img-fluid" src="{{ url_for('static', filename='image/foto_padrao.jpg') }}">
+        <figcaption>
+          <label class="fileContainer">
+            Mudar Capa
+            <input type="file" name="file" accept="image/png, image/jpg, image/jpeg">
+          </label>
+        </figcaption>
+      </figure>
+      <div class="btn-group">
+        <button class="voltar">voltar</button>
+        {{ form.submit }}
+      </div>
+    </div>
+  </form>
+</section>
 {% endblock %}

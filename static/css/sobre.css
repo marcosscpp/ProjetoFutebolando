@@ -1,0 +1,25 @@
+.sobre {
+  align-items: center;
+  display: flex;
+  gap: 20px;
+}
+
+@media (max-width: 620px) {
+  .sobre {
+    flex-direction: column;
+  }
+
+  .sobre-desc, .sobre-title {
+    text-align: center;
+  }
+}
+
+.sobre-desc {
+  font-family: var(--texto-longo);
+  font-size: 1.8rem;
+  line-height: 1.5;
+}
+
+.sobre-img {
+  width: 20rem;
+}

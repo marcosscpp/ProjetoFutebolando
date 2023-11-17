@@ -2,8 +2,8 @@ from app import bd
 
 class Aluno(bd.Model):
     id = bd.Column(bd.Integer, primary_key=True, autoincrement=True)
-    nome = bd.Column(bd.String(120), nullable=False)
-    nome_responsavel = bd.Column(bd.String(120), nullable=False)
+    nome = bd.Column(bd.String(80), nullable=False)
+    nome_responsavel = bd.Column(bd.String(80), nullable=False)
     cpf = bd.Column(bd.String(11), nullable=False)
     data_nascimento = bd.Column(bd.Date, nullable=False)
     observacoes = bd.Column(bd.Text)
@@ -15,3 +15,8 @@ class Aluno(bd.Model):
     rua = bd.Column(bd.String(120))
     numero_endereco = bd.Column(bd.String(10))
     complemento = bd.Column(bd.String(100))
+
+class Admin(bd.Model):
+    id = bd.Column(bd.Integer, primary_key=True, autoincrement=True)
+    username = bd.Column(bd.String(80), nullable=False)
+    password = bd.Column(bd.String(50))

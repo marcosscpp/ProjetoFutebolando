@@ -1,9 +1,26 @@
 {% extends "template.html" %}
 {% block content %}
-{% if image %}
-<img src="data:;base64,{{ image }}" alt="Image">
-{% else %}
-<img src="{{ url_for('imagem', nome_arquivo='foto_padrao.jpg') }}" alt="Image">
-{% endif %}
-
+<div class="perfil">
+  {% if image %}
+  <img class="foto-perfil" src="data:;base64,{{ image }}" alt="Image">
+  {% else %}
+  <img class="foto-perfil" src="{{ url_for('static', filename='image/foto_padrao.jpg') }}" alt="Image">
+  {% endif %}
+  <h3 class="perfil-nome">
+    {{ perfil.nome }}
+  </h3>
+  <div class="perfil-wrapper">
+    <p><span class="perfil-label perfil-nome-responsavel">Nome do Responsável:</span> {{ perfil.nome_responsavel }}</p>
+    <p><span class="perfil-label perfil-cpf">CPF:</span> {{ perfil.cpf }}</p>
+  </div>
+  <p><span class="perfil-label perfil-data-nascimento">Data de Nascimento:</span> {{ perfil.data_nascimento }}</p>
+  <p><span class="perfil-label perfil-observacoes">Observações:</span> {{ perfil.observacoes }}</p>
+  <p><span class="perfil-label perfil-cep">CEP:</span> {{ perfil.cep }}</p>
+  <p><span class="perfil-label perfil-telefone">Telefone:</span> {{ perfil.telefone }}</p>
+  <p><span class="perfil-label perfil-email">Email:</span> {{ perfil.email }}</p>
+  <p><span class="perfil-label perfil-bairro">Bairro:</span> {{ perfil.bairro }}</p>
+  <p><span class="perfil-label perfil-rua">Rua:</span> {{ perfil.rua }}</p>
+  <p><span class="perfil-label perfil-numero-endereco">Número do Endereço:</span> {{ perfil.numero_endereco }}</p>
+  <p><span class="perfil-label perfil-complemento">Complemento:</span> {{ perfil.complemento }}</p>
+</div>
 {% endblock %}

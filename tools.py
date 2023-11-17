@@ -24,14 +24,12 @@ def remover_simbolos(string: str, restrito: int) -> str:
         return re.sub(r'[^a-zA-ZÀ-ÿ ]', '', string)
     
 
-
-def login_admin_required(function):
-    @wraps(function)
+def login_adm_required(func):
+    @wraps(func)
     def wrapper(*args, **kwargs):
-        if "admin_log" not in session or session["admin_log"] is None:
-            proxima = url_for(function.__name__, id=kwargs.get("id"))
-            flash("Faça login como administrador para acessar esta página", "danger")
-            return redirect(url_for("login_adm", proxima=proxima))
-        return function(*args, **kwargs)
+        if "admnistrador_logado" not in session or session["admnistrador_logado"] is None:
+            flash("Realize Login para acessar essa página!", "danger")
+            return redirect(url_for("index"))
+        return func(*args, **kwargs)
 
     return wrapper

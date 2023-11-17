@@ -1,8 +1,6 @@
 import re, requests
-from typing import Any
 from datetime import datetime
 from wtforms import ValidationError
-import math
 
 class FormTexto:
   def __init__(self, msg: str) -> None:

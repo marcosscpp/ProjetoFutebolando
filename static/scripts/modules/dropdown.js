@@ -4,7 +4,7 @@ const dropDownElement = document.querySelector("[data-dropdown]");
 const eventos = ["touchstart", "click"];
 
 const initDropdown = () => {
-  if (window.matchMedia("(min-width: 800px)").matches) {
+  if (window.matchMedia("(min-width: 860px)").matches) {
     eventos.forEach((evento) => {
       dropDownElement.addEventListener(evento, handleClick);
     });

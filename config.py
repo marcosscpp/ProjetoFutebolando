@@ -1,16 +1,18 @@
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 SQLALCHEMY_DATABASE_URI = \
     '{sgbd}://{user}:{password}@{server}:{port}/{database}'.format(
         sgbd = 'mysql',
-        user='root',
-        password='senha',
-        server='127.0.0.1',
-        port= 3306, # 5432
-        database='Futebolando'
+        user=os.getenv("DATABASE_USERNAME"),
+        password=os.getenv("DATABASE_PASSWORD"),
+        server=os.getenv("DATABASE_HOST"),
+        port= 3306, 
+        database=os.getenv("DATABASE")
     )
 
 SECRET_KEY = 'FutebolandoItapevi'
-# RECAPTCHA_PRIVATE_KEY = '6Ld0loonAAAAABPSHzKbFJLdRf9Y_ihVw9tPAMXq'
-# RECAPTCHA_PUBLIC_KEY = '6Ld0loonAAAAAA3uvfvfC2XMmCRmfBcJklUbwY3t'
+
 DIR_PATH = os.path.dirname(os.path.abspath(__file__)) + "/imagens"

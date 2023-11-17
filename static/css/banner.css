@@ -84,7 +84,7 @@
 
 .slogan {
   color: var(--slogan);
-  font-family: "Jersey M54";
+  font-family: var(--titulo-destacado);
   font-size: 7.5rem;
   height: 18rem;
   line-height: 1.2;
@@ -112,7 +112,7 @@
   border: 1px solid var(--slogan);
   border-radius: 6px;
   color: var(--slogan);
-  font-family: "Rubik", sans-serif;
+  font-family: var(--funcional);
   font-size: 1.5rem;
   font-weight: 600;
   opacity: 0;

@@ -1,0 +1,159 @@
+.admin-title {
+  font-family: var(--titulo-destacado);
+  font-size: 4rem;
+  text-align: center;
+  margin: 5rem 0;
+}
+
+#alunos_wrapper {
+  margin: 0 auto 8rem auto;
+  width: 90%;
+}
+
+#alunos {
+  border-collapse: collapse;
+  border-radius: 5px 5px 0 0;
+  border-bottom: var(--tabela) solid 1px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  font-size: 1.3em;
+  font-family: var(--texto-longo);
+  margin: 1rem 0;
+  overflow-x: auto;
+  position: relative;
+}
+
+.today {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+#alunos_filter {
+  margin: 1rem 0;
+}
+
+#alunos_filter input {
+  font-size: 1.3rem;
+}
+
+#alunos thead tr th:first-child {
+  border-top-left-radius: 5px;
+}
+
+#alunos thead tr th:last-child {
+  border-top-right-radius: 5px;
+}
+
+#alunos th {
+  padding: 12px 15px;
+}
+
+#alunos td {
+  height: 6rem;
+  padding: 0 15px;
+}
+
+#alunos thead tr {
+  background-color: var(--tabela);
+  color: #ffffff;
+  text-align: left;
+}
+
+.dataTables_paginate span {
+  color: #ffffff;
+}
+
+.printBtn {
+  border: var(--tabela) solid 2px;
+  border-radius: 8px;
+  cursor: pointer;
+  outline: none;
+  padding: 7px 10px;
+  position: absolute;
+  left: 20%;
+  transition: background 0.5s;
+  z-index: 1;
+}
+
+.printBtn:hover {
+  background-color: var(--tabela);
+}
+
+.printBtn > * {
+  color: var(--tabela);
+  transition: background 0.5s;
+}
+
+.printBtn:hover > * {
+  color: white;
+}
+
+.paginate_button,
+#alunos_next,
+#alunos_previous {
+  background-color: var(--tabela) !important;
+  color: white !important;
+  font-family: var(--funcional);
+  margin: 0 2px;
+}
+
+#alunos_info {
+  font-family: var(--funcional);
+}
+
+.chamada {
+  display: none;
+}
+
+@media print {
+  @page {
+    margin: 50px;
+  }
+
+  body * {
+    visibility: hidden;
+    position: fixed;
+  }
+
+  #alunos {
+    border: none;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    visibility: visible;
+  }
+
+  table {
+    page-break-inside: auto;
+  }
+
+  #alunos tr {
+    page-break-inside: avoid;
+    page-break-after: auto;
+  }
+
+  #alunos td {
+    height: 5rem;
+  }
+
+  #alunos * {
+    position: relative;
+    visibility: visible;
+  }
+
+  .admin-funcs,
+  .admin-ico {
+    display: none;
+  }
+
+  .chamada {
+    display: inline-block;
+    border-bottom: solid 1px #ddd; 
+    border-left: solid 1px #ddd;
+    width: 70%;
+  }
+}
+
+tr.disabled {
+  animation: disapear-left forwards 0.7s;
+}

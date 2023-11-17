@@ -1,19 +1,122 @@
 footer {
-  background-color: red;
-  display: flex;
-}
-
-footer div {
-  align-items: center;
+  background: var(--gradient-footer);
+  color: var(--footer-color);
   display: flex;
   flex-direction: column;
-  font-size: 20px;
+}
+
+.patrocinadores {
+  align-items: center;
+  background-color: var(--patrocinadores);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 5rem;
+  padding: 3rem 10rem;
+  width: 100%;
+}
+
+.patrocinadores img {
+  width: 12rem;
+  filter: brightness(0) saturate(100%) invert(85%) sepia(0%) hue-rotate(0deg);
+  filter: brightness(0) saturate(100%) invert(85%) sepia(0%) hue-rotate(165deg);
+  -webkit-filter: brightness(0) saturate(100%) invert(85%) sepia(0%)
+    hue-rotate(165deg);
+  -moz-filter: brightness(0) saturate(100%) invert(85%) sepia(0%)
+    hue-rotate(165deg);
+}
+
+.footer-content,
+.footer-media,
+.footer-infos {
+  align-items: center;
+  display: flex;
+  font-size: 1.6rem;
+  font-family: var(--texto-longo);
+}
+
+.footer-content {
+  justify-content: space-between;
+  padding: 4rem 10rem;
+}
+
+@media (max-width: 800px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 5rem;
+  }
+}
+
+.footer-infos {
+  flex-direction: column;
+  gap: 2rem;
+  width: 50%;
+}
+
+@media (max-width: 450px) {
+  .footer-infos {
+    font-size: 1.3rem;
+  }
+}
+
+.footer-description {
+  text-align: center;
+}
+
+.footer-media {
+  gap: 1rem 2.5rem;
+  font-size: 2rem;
+  position: relative;
+}
+
+@media (max-width: 450px) {
+  .footer-media {
+    font-size: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+.footer-media::before {
+  background-color: var(--footer-color);
+  content: "";
+  height: 100%;
+  left: -6rem;
+  width: 1px;
+  position: absolute;
+  top: 0;
+}
+
+@media (max-width: 800px) {
+  .footer-media::before {
+    height: 1px;
+    left: 0;
+    top: -2rem;
+    width: 100%;
+  }
 }
 
 .footer-img {
-  width: 150px;
+  width: 12rem;
 }
 
 .social-media {
   display: flex;
+  gap: 2rem;
+}
+
+.social-media li i {
+  align-items: center;
+  background-color: var(--patrocinadores);
+  display: flex;
+  justify-content: center;
+  height: 1rem;
+  padding: 2rem;
+  width: 2rem;
+  transition: color 0.3s, background 0.3s;
+}
+
+.social-media li i:hover {
+  background: var(--footer-color);
+  color: var(--patrocinadores);
+  cursor: pointer;
 }
